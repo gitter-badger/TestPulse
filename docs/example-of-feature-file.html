@@ -1,0 +1,25 @@
+<p>Feature: Login
+In order to secure my website,
+as a business owner,
+I want to implement login functionality</p>
+
+<p>Background: Given I am on login page</p>
+
+<p>@wip @smoke @browser @ci
+Scenario Outline: Check user's login credentials
+Given I filled <username> <email> and <password>
+When I clicked on Login
+Then I should see <success or failure> message a
+And I should get an email saying: "Dear User, You have just tried to login to our system. If your login is successful then you will get another email to verify you details. Thanks"</p>
+
+<p>Examples: Valid login
+|username    |email          |password |success or failure |
+|Andy        |andy@gmail.com |abcd1234 |success            |
+|Mike        |mike@gmail.com |abcd1234 |success            |</p>
+
+<p>Examples: InValid login
+|username    |email          |password         |success or failure |
+|Andy        |andy@gmail.com|                  |failure            |</p>
+
+<p>References:
+http://shashikantjagtap.net/take-good-care-of-given-when-then-in-the-bdd/</p>

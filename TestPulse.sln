@@ -23,7 +23,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentation", "{91929209-3261-41FC-8799-CE821AC0271B}"
 	ProjectSection(SolutionItems) = preProject
 		docs\example-of-feature-file.md = docs\example-of-feature-file.md
-		docs\index.md = docs\index.md
+		docs\index.rst = docs\index.rst
 		README.md = README.md
 		docs\remote-powershell.md = docs\remote-powershell.md
 		docs\testpulse.sharepoint.md = docs\testpulse.sharepoint.md

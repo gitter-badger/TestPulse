@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.30110.0
+VisualStudioVersion = 12.0.30723.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{F7942EB3-641C-4F10-9D54-8D0195099B7B}"
 	ProjectSection(SolutionItems) = preProject
@@ -23,7 +23,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentation", "{91929209-3261-41FC-8799-CE821AC0271B}"
 	ProjectSection(SolutionItems) = preProject
 		docs\example-of-feature-file.md = docs\example-of-feature-file.md
-		docs\readme.md = docs\readme.md
+		docs\index.md = docs\index.md
+		README.md = README.md
 		docs\remote-powershell.md = docs\remote-powershell.md
 		docs\testpulse.sharepoint.md = docs\testpulse.sharepoint.md
 	EndProjectSection

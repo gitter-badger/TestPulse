@@ -46,7 +46,7 @@
     <Compile Include="Core\ISharePointList.cs" />
     <Compile Include="Core\ISharePointRole.cs" />
     <Compile Include="Core\ISharePointSite.cs" />
-    <Compile Include="Core\ObjectModelClient.cs" />
+    <Compile Include="Core\CSOMClient.cs" />
     <Compile Include="Core\PowershellClient.cs" />
     <Compile Include="Core\WebServiceClient.cs" />
     <Compile Include="Enums\SharePointVersion.cs" />

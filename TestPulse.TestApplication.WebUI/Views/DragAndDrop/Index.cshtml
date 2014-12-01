@@ -1,0 +1,211 @@
+﻿@{
+    ViewBag.Title = "Drag and Drop";
+}
+<h2>Drag and Drop Testbed</h2>
+<p>Based on <a href="https://yuilibrary.com/yui/docs/dd/groups-drag.html">YUI Library example</a></p>
+<form class="well">
+    <div id="workarea" style="position: relative; height: 300px;">
+        <div class="slot" id="t1">1</div>
+        <div class="slot bottom" id="t2">2</div>
+        <div class="slot bottom" id="b1">3</div>
+        <div class="slot bottom" id="b2">4</div>
+        <div class="slot bottom" id="b3">5</div>
+        <div class="slot" id="b4">6</div>
+        <div class="player" id="pt1">1</div>
+        <div class="player" id="pt2">2</div>
+        <div class="player" id="pb1">3</div>
+        <div class="player" id="pb2">4</div>
+        <div class="player" id="pboth1">5</div>
+        <div class="player" id="pboth2">6</div>
+    </div>
+</form>
+@section scripts
+{
+    @*<script src="http://"></script>*@
+
+    <script src="~/Scripts/yui/yui-min.js"></script>
+    <script src="~/Scripts/yui/yui-combo.min.js"></script>
+    <script>window.YUI || document.write('<script src="yui.yahooapis.com/3.10.3/build/yui/yui-min.js">\x3C/script>')</script>
+    <script type="text/javascript">
+
+        (function () {
+
+            YUI().use('dd-drop', 'dd-proxy', 'dd-constrain', function (Y) {
+
+                var slots = Y.one('#workarea').all('.slot');
+                Y.each(slots, function (v, k) {
+                    var id = v.get('id'), groups = ['two'];
+                    switch (id) {
+                        case 't1':
+                        case 't2':
+                            groups = ['one'];
+                            break;
+                    }
+                    var drop = new Y.DD.Drop({
+                        node: v,
+                        groups: groups
+                    });
+                });
+
+                var players = Y.one('#workarea').all('.player');
+                Y.each(players, function (v, k) {
+                    var id = v.get('id'), groups = ['one', 'two'];
+                    switch (id) {
+                        case 'pt1':
+                        case 'pt2':
+                            groups = ['one'];
+                            break;
+                        case 'pb1':
+                        case 'pb2':
+                            groups = ['two'];
+                            break;
+                    }
+                    var drag = new Y.DD.Drag({
+                        node: v,
+                        groups: groups
+                    }).plug(Y.Plugin.DDProxy, {
+                        moveOnEnd: false
+                    }).plug(Y.Plugin.DDConstrained, {
+                        constrain2node: '#workarea'
+                    });
+                    drag.on('drag:start', function () {
+                        var p = this.get('dragNode'),
+                            n = this.get('node');
+                        n.setStyle('opacity', .25);
+                        if (!this._playerStart) {
+                            this._playerStart = this.nodeXY;
+                        }
+                        p.set('innerHTML', n.get('innerHTML'));
+                        p.setStyles({
+                            backgroundColor: n.getStyle('backgroundColor'),
+                            color: n.getStyle('color'),
+                            opacity: .65
+                        });
+                    });
+                    drag.on('drag:end', function () {
+                        var n = this.get('node');
+                        n.setStyle('opacity', '1');
+                    });
+                    drag.on('drag:drophit', function (e) {
+                        var xy = e.drop.get('node').getXY();
+                        this.get('node').setXY(xy, Y.UA.ie);
+                    });
+                    drag.on('drag:dropmiss', function (e) {
+                        if (this._playerStart) {
+                            this.get('node').setXY(this._playerStart, Y.UA.ie);
+                            this._playerStart = null;
+                        }
+                    });
+                });
+            });
+
+        })();
+    </script>
+}
+
+@section styles {
+    <style type="text/css">
+        .slot {
+            border: 2px solid #aaaaaa;
+            background-color: #dddddd;
+            color: #666666;
+            text-align: center;
+            position: absolute;
+            width: 60px;
+            height: 60px;
+        }
+
+        .player {
+            border: 2px solid #bbbbbb;
+            color: #eeeeee;
+            text-align: center;
+            position: absolute;
+            width: 60px;
+            height: 60px;
+        }
+
+        .target {
+            border: 2px solid #574188;
+            background-color: #cccccc;
+            text-align: center;
+            position: absolute;
+            width: 60px;
+            height: 60px;
+        }
+
+        #t1 {
+            left: 10px;
+            top: 0px;
+        }
+
+        #t2 {
+            left: 378px;
+            top: 0px;
+        }
+
+        #b1 {
+            left: 84px;
+            top: 50px;
+        }
+
+        #b2 {
+            left: 158px;
+            top: 50px;
+        }
+
+        #b3 {
+            left: 232px;
+            top: 50px;
+        }
+
+        #b4 {
+            left: 306px;
+            top: 50px;
+        }
+
+        #pt1 {
+            background-color: #7E695E;
+            left: 84px;
+            top: 150px;
+        }
+
+        #pt2 {
+            background-color: #7E695E;
+            left: 84px;
+            top: 230px;
+        }
+
+        #pb1 {
+            background-color: #416153;
+            left: 195px;
+            top: 150px;
+        }
+
+        #pb2 {
+            background-color: #416153;
+            left: 195px;
+            top: 230px;
+        }
+
+        #pboth1 {
+            background-color: #552E37;
+            left: 306px;
+            top: 150px;
+        }
+
+        #pboth2 {
+            background-color: #552E37;
+            left: 306px;
+            top: 230px;
+        }
+
+        #usercontrols {
+            top: -36px;
+        }
+
+        #workarea {
+            position: relative;
+            height: 300px;
+        }
+    </style>
+}

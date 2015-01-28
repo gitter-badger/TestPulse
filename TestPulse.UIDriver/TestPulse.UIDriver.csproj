@@ -9,8 +9,8 @@
     <ProjectGuid>{790E12B7-EF85-4F39-B60D-E3E29EB9A3E8}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>TestPulse.UIAutomation</RootNamespace>
-    <AssemblyName>TestPulse.UIAutomation</AssemblyName>
+    <RootNamespace>TestPulse.UIDriver</RootNamespace>
+    <AssemblyName>TestPulse.UIDriver</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -55,9 +55,19 @@
     </CodeAnalysisDependentAssemblyPaths>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CodedUITest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Shared\Helper.cs" />
+    <Compile Include="Helper\Utils.cs" />
+    <Compile Include="UIDriver.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TestPulse\TestPulse.csproj">
+      <Project>{7c13cc6e-c32d-4886-b625-8d26f762f068}</Project>
+      <Name>TestPulse</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="CodedUI\" />
+    <Folder Include="Selenium\" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

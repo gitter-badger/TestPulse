@@ -51,11 +51,12 @@
     <Compile Include="Core\WebServiceClient.cs" />
     <Compile Include="Enums\SharePointVersion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utilities\Authenticator.cs" />
+    <Compile Include="Utilities\CookiesHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Entities\" />
     <Folder Include="Extensions\" />
-    <Folder Include="Utilities\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

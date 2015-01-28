@@ -4,9 +4,9 @@ using Microsoft.VisualStudio.TestTools.UITest.Extension;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Microsoft.VisualStudio.Tools.Applications.Runtime;
 
-namespace Nintex.TestingFramework.UIAutomation.Shared
+namespace TestPulse.UIDriver.Helper
 {
-    public static class Helper
+    public static class Utils
     {
         public static void ExecuteWithRetry(Action codeToRun, int retryMax = 10, int retryInterval = 2000)
         {

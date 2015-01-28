@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.30110.0
+VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{F7942EB3-641C-4F10-9D54-8D0195099B7B}"
 	ProjectSection(SolutionItems) = preProject
@@ -10,11 +10,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{F7942E
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestPulse.Framework", "TestPulse.Framework\TestPulse.Framework.csproj", "{A94F16EA-F043-4A71-9D32-922FCC784833}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestPulse", "TestPulse\TestPulse.csproj", "{7C13CC6E-C32D-4886-B625-8D26F762F068}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestPulse.UIAutomation", "TestPulse.UIAutomation\TestPulse.UIAutomation.csproj", "{790E12B7-EF85-4F39-B60D-E3E29EB9A3E8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestPulse.AcceptanceTests", "TestPulse.AcceptanceTests\TestPulse.AcceptanceTests.csproj", "{7742363F-C2F1-4777-BFE4-63A10F370698}"
 EndProject
@@ -29,9 +25,20 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentat
 		docs\testpulse.sharepoint.md = docs\testpulse.sharepoint.md
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A92F6DD5-E307-4085-853D-4EAE2A3010FF}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test Settings", "Test Settings", "{A92F6DD5-E307-4085-853D-4EAE2A3010FF}"
+	ProjectSection(SolutionItems) = preProject
+		testsettings\AcceptanceTests.testsettings = testsettings\AcceptanceTests.testsettings
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestPulse.TestApplication.WebUI", "TestPulse.TestApplication.WebUI\TestPulse.TestApplication.WebUI.csproj", "{0C963961-D8DC-407B-A6B1-F82CD57F0ED6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{6B3ABB98-5EF7-406A-B245-F46E0563F01E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestPulse.AcceptanceTests.NUnit", "TestPulse.AcceptanceTests.NUnit\TestPulse.AcceptanceTests.NUnit.csproj", "{D1ACF8F3-31F3-423C-AE0C-8BF8FD4BCCD8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestPulse.UIDriver", "TestPulse.UIDriver\TestPulse.UIDriver.csproj", "{790E12B7-EF85-4F39-B60D-E3E29EB9A3E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestPulse.SharePoint.UnitTests", "TestPulse.SharePoint.UnitTests\TestPulse.SharePoint.UnitTests.csproj", "{642AF7C2-83BE-490F-9B9B-80F2AF032FF5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,18 +46,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{A94F16EA-F043-4A71-9D32-922FCC784833}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A94F16EA-F043-4A71-9D32-922FCC784833}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A94F16EA-F043-4A71-9D32-922FCC784833}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A94F16EA-F043-4A71-9D32-922FCC784833}.Release|Any CPU.Build.0 = Release|Any CPU
 		{7C13CC6E-C32D-4886-B625-8D26F762F068}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{7C13CC6E-C32D-4886-B625-8D26F762F068}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7C13CC6E-C32D-4886-B625-8D26F762F068}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7C13CC6E-C32D-4886-B625-8D26F762F068}.Release|Any CPU.Build.0 = Release|Any CPU
-		{790E12B7-EF85-4F39-B60D-E3E29EB9A3E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{790E12B7-EF85-4F39-B60D-E3E29EB9A3E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{790E12B7-EF85-4F39-B60D-E3E29EB9A3E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{790E12B7-EF85-4F39-B60D-E3E29EB9A3E8}.Release|Any CPU.Build.0 = Release|Any CPU
 		{7742363F-C2F1-4777-BFE4-63A10F370698}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{7742363F-C2F1-4777-BFE4-63A10F370698}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7742363F-C2F1-4777-BFE4-63A10F370698}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -63,8 +62,25 @@ Global
 		{0C963961-D8DC-407B-A6B1-F82CD57F0ED6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0C963961-D8DC-407B-A6B1-F82CD57F0ED6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0C963961-D8DC-407B-A6B1-F82CD57F0ED6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1ACF8F3-31F3-423C-AE0C-8BF8FD4BCCD8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1ACF8F3-31F3-423C-AE0C-8BF8FD4BCCD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1ACF8F3-31F3-423C-AE0C-8BF8FD4BCCD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1ACF8F3-31F3-423C-AE0C-8BF8FD4BCCD8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{790E12B7-EF85-4F39-B60D-E3E29EB9A3E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{790E12B7-EF85-4F39-B60D-E3E29EB9A3E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{790E12B7-EF85-4F39-B60D-E3E29EB9A3E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{790E12B7-EF85-4F39-B60D-E3E29EB9A3E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{642AF7C2-83BE-490F-9B9B-80F2AF032FF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{642AF7C2-83BE-490F-9B9B-80F2AF032FF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{642AF7C2-83BE-490F-9B9B-80F2AF032FF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{642AF7C2-83BE-490F-9B9B-80F2AF032FF5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7742363F-C2F1-4777-BFE4-63A10F370698} = {6B3ABB98-5EF7-406A-B245-F46E0563F01E}
+		{D1ACF8F3-31F3-423C-AE0C-8BF8FD4BCCD8} = {6B3ABB98-5EF7-406A-B245-F46E0563F01E}
+		{642AF7C2-83BE-490F-9B9B-80F2AF032FF5} = {6B3ABB98-5EF7-406A-B245-F46E0563F01E}
 	EndGlobalSection
 EndGlobal
